@@ -1,4 +1,4 @@
-# Boiler Plate Monorepo Application
+# Boilerplate Monorepo Application
 
 ## Express REST API
   - SQLite DB with Sequelize
