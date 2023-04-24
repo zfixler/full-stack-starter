@@ -1,0 +1,277 @@
+@font-face {
+	font-family: 'Poppins';
+	src: url('./assets/fonts/Poppins-Regular.ttf'), format('ttf');
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('./assets/fonts/Poppins-Italic.ttf'), format('ttf');
+	font-style: italic;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('./assets/fonts/Poppins-Bold.ttf'), format('ttf');
+	font-style: normal;
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('./assets/fonts/Poppins-BoldItalic.ttf'), format('ttf');
+	font-style: italic;
+	font-weight: 700;
+}
+
+:root {
+	// Typography
+	--fs-h1: 2.488rem;
+	--fs-h2: 2.074rem;
+	--fs-h3: 1.728rem;
+	--fs-h4: 1.44rem;
+	--fs-h5: 1.2rem;
+	--fs-small: 0.833rem;
+
+	// Colors
+	--primary: #1e2019;
+	--secondary-dark: #dddddd;
+	--secondary-light: #fff;
+	--accent: #3590f3;
+	--bg-light: #f1eeee;
+	--error-red: #fe5f55;
+	--error-light: #fcd5d5;
+
+	// Other
+	--box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+h1 {
+	font-size: var(--fs-h1);
+}
+h2 {
+	font-size: var(--fs-h2);
+}
+h3 {
+	font-size: var(--fs-h3);
+}
+h4 {
+	font-size: var(--fs-h5);
+}
+h5 {
+	font-size: var(--fs-h5);
+}
+small {
+	font-size: var(--fs-small);
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: var(--primary);
+	font-family: 'Poppins', sans-serif;
+}
+
+a,
+.navNavLink,
+.loginFormSubmitLink,
+.registrationFormSubmitLink {
+	text-decoration: none;
+	color: var(--primary);
+	transition: color 150ms ease;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: var(--accent);
+		outline: none;
+	}
+}
+
+.navBtnLogout {
+	background-color: var(--bg-light);
+	border: none;
+	outline: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: var(--primary);
+	transition: color 150ms ease;
+	cursor: pointer;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: var(--accent);
+	}
+}
+
+.layoutMain {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: var(--bg-light);
+}
+
+.layoutFooter {
+	display: flex;
+	justify-content: center;
+	padding: 8px 0;
+}
+
+.layoutFooterSmall {
+	color: var(--primary);
+}
+
+.navNav {
+	height: 42px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 16px;
+	padding: 0 16px;
+}
+
+.dashboardContainer,
+.registrationContainer,
+.loginContainer {
+	margin: 0 auto;
+	width: min(500px, 90%);
+	box-shadow: var(--box-shadow);
+	padding: 16px 24px 42px;
+	border-radius: 8px;
+	background-color: var(--secondary-light);
+}
+
+.dashboardContainer {
+	width: min(1200px, 90%);
+}
+
+.registrationForm,
+.loginForm {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.registrationFormError,
+.loginFormError {
+	color: var(--error-red);
+	text-align: center;
+}
+
+.registrationFormTitle,
+.loginFormTitle {
+	margin-bottom: 4px;
+	text-align: center;
+	font-size: var(--fs-h4);
+	font-weight: normal;
+}
+
+.registrationFormLabelError,
+.registrationFormLabel,
+.loginFormLabel {
+	margin-bottom: 4px;
+	transition: color 150ms ease;
+
+	&:focus-within {
+		color: var(--accent);
+	}
+}
+
+.registrationFormLabelError {
+	color: var(--error-red);
+
+	&:focus-within {
+		color: var(--error-red);
+	}
+}
+
+.registrationFormInputContainerError,
+.registrationFormInputContainer,
+.loginFormInputContainer {
+	margin-top: 4px;
+	padding: 8px 16px;
+	border-radius: 8px;
+	border-color: var(--secondary-dark);
+	border-style: solid;
+	border-width: 1px;
+	display: flex;
+	gap: 8px;
+	color: var(--secondary-dark);
+	align-items: center;
+	transition: all 150ms ease;
+	font-family: inherit;
+
+	&:focus-within {
+		color: var(--accent);
+		border-color: var(--accent);
+	}
+}
+
+.registrationFormInputContainerError {
+	color: var(--error-red);
+	border-color: var(--error-light);
+
+	&:focus-within {
+		color: var(--error-red);
+		border-color: var(--error-light);
+	}
+}
+
+.registrationInputPassword,
+.registrationInputEmail,
+.loginInputPassword,
+.loginInputEmail {
+	border: none;
+	outline: none;
+	width: 100%;
+	background-color: var(--secondary-light);
+}
+
+.registrationFormInputIcon,
+.loginFormInputIcon {
+	width: 16px;
+	height: 16px;
+	color: inherit;
+}
+
+.registrationFormSubmitContainer,
+.loginFormSubmitContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: 8px;
+}
+
+.loginBtnSubmit,
+.registrationBtnSubmit {
+	border: none;
+	outline: none;
+	padding: 8px 16px;
+	background-color: var(--secondary-dark);
+	border-radius: 8px;
+	box-shadow: var(--box-shadow);
+	cursor: pointer;
+	font-family: inherit;
+	font-size: inherit;
+	transition: all 150ms ease;
+	width: fit-content;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: var(--accent);
+		color: var(--secondary-light);
+	}
+
+	&:disabled {
+		background-color: var(--secondary-dark);
+		color: var(--primary);
+		cursor: not-allowed;
+	}
+}

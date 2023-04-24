@@ -1,0 +1,23 @@
+{
+	"name": "api",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"start": "node app.js",
+		"dev": "nodemon app.js"
+	},
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"connect-session-sequelize": "^7.1.6",
+		"cors": "^2.8.5",
+		"express": "~4.16.1",
+		"express-session": "^1.17.3",
+		"sequelize": "^6.29.0",
+		"sqlite3": "^5.1.4"
+	},
+	"devDependencies": {
+		"dotenv": "^16.0.3",
+		"nodemon": "^2.0.20"
+	}
+}
